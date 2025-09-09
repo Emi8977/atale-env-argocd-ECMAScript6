@@ -1,0 +1,1 @@
+# atale-env-argocd-ECMAScript6
