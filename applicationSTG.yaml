@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atale-stg-area
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Emi8977/atale-k8s-MERN-ECMAScript6.git
+    targetRevision: main     #rama principal donde estan los archivos
+    path: overlays/stg                  #es el directorio donde esta deployment.yaml en la carpeta k8s de github
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ambiente-atale-stg #el nombre del namespace que va a crear dentro del cluster
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
