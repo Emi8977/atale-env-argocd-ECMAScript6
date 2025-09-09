@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Emi8977/atale-k8s-MERN-ECMAScript6
-    targetRevision: dev-v1      #rama principal donde estan los archivos
+    repoURL: https://github.com/Emi8977/atale-k8s-MERN-ECMAScript6.git
+    targetRevision: main      #rama principal donde estan los archivos
     path: overlays/dev                  #es el directorio donde esta deployment.yaml en la carpeta k8s de github
   destination:
     server: https://kubernetes.default.svc
